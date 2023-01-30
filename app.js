@@ -32,23 +32,22 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoose
-	.connect("mongodb+srv://kashiev:panzer20@mongonode.kvlsb35.mongodb.net/test")
-	.then(result => {
-		User.findOne().then(user => {
-			if (!user) {
-				const user = new User({
-					name: "Adil",
-					email: "adil@test.com",
-					cart: {
-						items: [],
-					},
-				});
-				user.save();
-			}
-		});
-		app.listen(3000);
-	})
-	.catch(err => {
-		console.log(err);
-	});
+// mongoose
+// 	.then(result => {
+// 		User.findOne().then(user => {
+// 			if (!user) {
+// 				const user = new User({
+// 					name: "Adil",
+// 					email: "adil@test.com",
+// 					cart: {
+// 						items: [],
+// 					},
+// 				});
+// 				user.save();
+// 			}
+// 		});
+// 		app.listen(3000);
+// 	})
+// 	.catch(err => {
+// 		console.log(err);
+// 	});
